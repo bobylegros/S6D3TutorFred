@@ -1,0 +1,23 @@
+@import "bootstrap";
+$bgDefault      : #f96332;
+$bgHighlight    : #fa825b;
+$colDefault     : #ecf0f1;
+$colHighlight   : #ffffff;
+.navbar {
+  background-color: $bgDefault !important;
+
+  .nav-item {
+    .nav-link {
+      color: white !important;
+      // color: $colDefault !important;
+      border-radius: .25rem;
+      margin: 0 0.25em;
+      &:not(.disabled) {
+        &:hover, &:focus {
+          background-color: $bgHighlight !important;
+          color: $colHighlight !important;
+        }
+      }
+    }
+  }
+}

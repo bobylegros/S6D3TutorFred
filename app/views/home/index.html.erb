@@ -1,14 +1,18 @@
+
+<nav class="navbar fixed-top">
+  <%= link_to "The Hacking Project", root_path, id: "logo", class: "navbar-brand" %>
+  <ul class="nav nav-pills">
+    <% if user_signed_in? %>
+    <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+
+    <li class="nav-item"><%= current_user.email %></li>
+    <li class="nav-item"><%= link_to "Edit", edit_user_registration_path, class: "nav-link" %>
+    <% else %>
+    <li class="nav-item"><%= link_to "Log in", new_user_session_path, class: "nav-link" %></li>
+    <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></li>
+    <% end %>
+</ul>
+</nav>
+
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
-
-<ul>
-  <% if user_signed_in? %>
-  <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-  
-  <li><%= current_user.email %></li>
-  <li><%= link_to "Edit", edit_user_registration_path %>
-  <% else %>
-  <li><%= link_to "Log in", new_user_session_path %></li>
-  <li><%= link_to "Sign up", new_user_registration_path %></li>
-  <% end %>
-</ul>
